@@ -33,7 +33,7 @@
     ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
     ::-webkit-scrollbar-thumb { background: rgba(255,215,150,0.5); border-radius: 10px; }
 
-    /* GLASS DOOR OVERLAY with 50% Blur Background - No Background Colors */
+    /* GLASS DOOR OVERLAY */
     .glass-door-overlay {
       position: fixed;
       top: 0;
@@ -55,7 +55,6 @@
       pointer-events: none;
     }
     
-    /* Door containers - No background colors, only blurred image */
     .door-left, .door-right {
       position: absolute;
       top: 0;
@@ -72,7 +71,6 @@
       overflow: hidden;
     }
     
-    /* Blur background layer on doors - 50% blur, no color overlay */
     .door-left::before, .door-right::before {
       content: '';
       position: absolute;
@@ -88,7 +86,6 @@
       opacity: 0.9;
     }
     
-    /* Remove the colored glass overlay - only pure blur background */
     .door-left::after, .door-right::after {
       display: none;
     }
@@ -118,7 +115,6 @@
       transform: rotateY(90deg);
     }
     
-    /* Content on top of blurred background - with subtle glass effect */
     .pope-door-img {
       width: 200px;
       height: 200px;
@@ -177,20 +173,9 @@
       transition: all 0.3s;
       z-index: 20;
     }
-    .door-left .door-handle {
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .door-right .door-handle {
-      left: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .door-handle:hover {
-      transform: translateY(-50%) scale(1.1);
-      box-shadow: 0 8px 25px rgba(255,217,102,0.6);
-    }
+    .door-left .door-handle { right: 30px; top: 50%; transform: translateY(-50%); }
+    .door-right .door-handle { left: 30px; top: 50%; transform: translateY(-50%); }
+    .door-handle:hover { transform: translateY(-50%) scale(1.1); box-shadow: 0 8px 25px rgba(255,217,102,0.6); }
     @keyframes pulseHandle {
       0%, 100% { transform: translateY(-50%) scale(1); box-shadow: 0 5px 20px rgba(255,217,102,0.5); }
       50% { transform: translateY(-50%) scale(1.1); box-shadow: 0 5px 30px rgba(255,217,102,0.8); }
@@ -219,7 +204,7 @@
     .main-content { opacity: 0; visibility: hidden; transition: opacity 0.8s ease 0.3s; }
     .main-content.visible { opacity: 1; visibility: visible; }
 
-    /* NAVBAR - Fully Responsive */
+    /* NAVBAR */
     .navbar {
       background: rgba(10, 25, 30, 0.65);
       backdrop-filter: blur(14px);
@@ -243,17 +228,10 @@
       transition: 0.3s;
       position: relative;
     }
-    .nav-link:hover, .nav-link.active {
-      color: #FFD966 !important;
-      transform: translateY(-2px);
-    }
-    .navbar-toggler {
-      border-color: rgba(255,215,150,0.6);
-    }
-    .navbar-toggler-icon {
-      filter: brightness(0) invert(1);
-    }
-    /* Mobile menu improvements */
+    .nav-link:hover, .nav-link.active { color: #FFD966 !important; transform: translateY(-2px); }
+    .navbar-toggler { border-color: rgba(255,215,150,0.6); }
+    .navbar-toggler-icon { filter: brightness(0) invert(1); }
+    
     @media (max-width: 991px) {
       .navbar-collapse {
         background: rgba(10, 25, 30, 0.95);
@@ -263,15 +241,8 @@
         margin-top: 1rem;
         border: 1px solid rgba(255,215,150,0.3);
       }
-      .nav-link {
-        padding: 0.8rem 1rem;
-        text-align: center;
-        border-radius: 0.5rem;
-        margin: 2px 0;
-      }
-      .nav-link:hover {
-        background: rgba(255,217,102,0.1);
-      }
+      .nav-link { padding: 0.8rem 1rem; text-align: center; border-radius: 0.5rem; margin: 2px 0; }
+      .nav-link:hover { background: rgba(255,217,102,0.1); }
     }
 
     /* HERO SECTION */
@@ -373,17 +344,17 @@
     .glass-news-card:hover { transform: translateY(-8px); border-color: #FFD966; }
     .news-badge { background: linear-gradient(135deg, #FFD966, #FFB347); padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; color: #1e2f38; }
 
-    /* Pope's Intentions Button Styling - HIGHEST Z-INDEX */
+    /* Pope's Intentions Button */
     .pope-intentions-wrapper {
       position: fixed;
-      bottom: 100px;
+      bottom: 30px;
       right: 30px;
       z-index: 9999;
     }
     .pope-intentions-btn {
       width: auto;
-      min-width: 160px;
-      height: 50px;
+      min-width: 200px;
+      height: 55px;
       background: linear-gradient(135deg, #FFD966, #FFB347);
       border-radius: 50px;
       display: flex;
@@ -394,12 +365,13 @@
       transition: all 0.3s ease;
       animation: pulseGlow 2s infinite;
       z-index: 9999;
-      padding: 0 20px;
+      padding: 0 25px;
+      border: none;
     }
     .pope-intentions-btn i {
       font-size: 1.2rem;
       color: #1e2f38;
-      margin-right: 8px;
+      margin-right: 10px;
       transition: transform 0.3s;
     }
     .pope-intentions-btn span {
@@ -412,20 +384,17 @@
       transform: scale(1.05);
       box-shadow: 0 8px 30px rgba(255,217,102,0.5);
     }
-    .pope-intentions-btn:hover i {
-      transform: rotate(5deg);
-    }
+    .pope-intentions-btn:hover i { transform: rotate(5deg); }
     @keyframes pulseGlow {
       0%, 100% { box-shadow: 0 5px 20px rgba(255,217,102,0.3); }
       50% { box-shadow: 0 5px 30px rgba(255,217,102,0.6); }
     }
     
-    /* Hover Popup Card - HIGHEST Z-INDEX */
     .pope-popup-card {
       position: absolute;
-      bottom: 70px;
+      bottom: 75px;
       right: 0;
-      width: 340px;
+      width: 360px;
       background: rgba(20, 40, 48, 0.95);
       backdrop-filter: blur(20px);
       border-radius: 1.5rem;
@@ -464,7 +433,7 @@
     }
     .pope-intention-list li {
       font-size: 0.75rem;
-      padding: 0.3rem 0;
+      padding: 0.4rem 0;
       border-bottom: 1px solid rgba(255,217,102,0.2);
       display: flex;
       align-items: center;
@@ -476,16 +445,14 @@
     }
     .button-group {
       display: flex;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 12px;
+      margin-top: 15px;
     }
     .view-pdf-btn, .download-pdf-btn {
       flex: 1;
-      background: linear-gradient(135deg, #FFD966, #FFB347);
       border: none;
-      padding: 0.7rem;
+      padding: 0.75rem;
       border-radius: 2rem;
-      color: #1e2f38;
       font-weight: 600;
       font-size: 0.8rem;
       transition: all 0.3s;
@@ -496,7 +463,7 @@
       gap: 0.5rem;
     }
     .view-pdf-btn {
-      background: rgba(255,217,102,0.2);
+      background: rgba(255,217,102,0.15);
       border: 1px solid #FFD966;
       color: #FFD966;
     }
@@ -505,15 +472,22 @@
       color: #1e2f38;
       transform: translateY(-2px);
     }
+    .download-pdf-btn {
+      background: linear-gradient(135deg, #FFD966, #FFB347);
+      color: #1e2f38;
+    }
     .download-pdf-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(255,217,102,0.4);
     }
 
-    /* Image Detail Modal */
+    /* Modal */
     .image-modal-content {
-      background: rgba(20, 40, 48, 0.98); backdrop-filter: blur(20px);
-      border: 1px solid #FFD966; border-radius: 1.5rem; color: white;
+      background: rgba(20, 40, 48, 0.98);
+      backdrop-filter: blur(20px);
+      border: 1px solid #FFD966;
+      border-radius: 1.5rem;
+      color: white;
     }
     .image-detail-img { width: 100%; border-radius: 1rem; max-height: 400px; object-fit: cover; }
     .scripture-verse { background: rgba(255,217,102,0.15); padding: 1rem; border-radius: 1rem; border-left: 4px solid #FFD966; }
@@ -528,8 +502,8 @@
       .vatican-logo-left img, .vatican-logo-right img { width: 40px; height: 40px; }
       .door-handle { width: 45px; height: 45px; font-size: 1.5rem; }
       .door-welcome-text { font-size: 0.8rem; white-space: nowrap; padding: 0.5rem 1rem; }
-      .pope-popup-card { width: 300px; right: -10px; }
-      .pope-intentions-btn { min-width: 140px; height: 45px; }
+      .pope-popup-card { width: 320px; right: -10px; }
+      .pope-intentions-btn { min-width: 180px; height: 48px; padding: 0 18px; }
       .pope-intentions-btn span { font-size: 0.8rem; }
       .button-group { flex-direction: column; gap: 8px; }
     }
@@ -537,7 +511,7 @@
 </head>
 <body>
 
-<!-- GLASS DOOR OVERLAY with 50% Blur Background - No Background Colors -->
+<!-- GLASS DOOR OVERLAY -->
 <div class="glass-door-overlay" id="glassDoor">
   <div class="door-left">
     <img src="Images/LEO LEFT.jpg" alt="Pope Leo XIII" class="pope-door-img" onerror="this.src='https://randomuser.me/api/portraits/men/32.jpg'">
@@ -562,7 +536,7 @@
         <i class="fas fa-church logo-icon"></i>
         <span>Pontifical Mission Society</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
@@ -596,36 +570,32 @@
     <div class="timer-progress"><div class="timer-progress-bar" id="timerBar"></div></div>
   </div>
 
-  <!-- POPE'S INTENTIONS BUTTON WITH VIEW AND DOWNLOAD OPTIONS -->
+  <!-- POPE'S INTENTIONS BUTTON -->
   <div class="pope-intentions-wrapper">
     <div class="pope-intentions-btn">
       <i class="fas fa-praying-hands"></i>
-      <span>Pope's Yearly prayer Intentions</span>
+      <span>Pope's Yearly Prayer Intentions</span>
     </div>
     <div class="pope-popup-card">
-      <h4><i class="fas fa-pope me-2"></i>Pope's Yearly prayer Intentions</h4>
+      <h4><i class="fas fa-pope me-2"></i>Pope's Yearly Prayer Intentions</h4>
       <p>The Holy Father's prayer intentions for the current year</p>
       <ul class="pope-intention-list">
         <li><i class="fas fa-circle"></i> <strong>January:</strong> For prayer with the Word of God</li>
         <li><i class="fas fa-circle"></i> <strong>February:</strong> For children with incurable diseases</li>
-        <li><i class="fas fa-circle"></i> <strong>March:</strong>For disarmament and peace</li>
+        <li><i class="fas fa-circle"></i> <strong>March:</strong> For disarmament and peace</li>
         <li><i class="fas fa-circle"></i> <strong>April:</strong> For priests in crisis</li>
         <li><i class="fas fa-circle"></i> <strong>May:</strong> That everyone might have food</li>
         <li><i class="fas fa-circle"></i> <strong>June:</strong> For the values of sports</li>
-        <li><i class="fas fa-circle"></i> <strong>July:</strong>For respect for human life</li>
+        <li><i class="fas fa-circle"></i> <strong>July:</strong> For respect for human life</li>
         <li><i class="fas fa-circle"></i> <strong>August:</strong> For evangelization in the city</li>
-        <li><i class="fas fa-circle"></i> <strong>September:</strong>For the care of water</li>
+        <li><i class="fas fa-circle"></i> <strong>September:</strong> For the care of water</li>
         <li><i class="fas fa-circle"></i> <strong>October:</strong> For mental health ministry</li>
-        <li><i class="fas fa-circle"></i> <strong>November:</strong>For the proper use of wealth</li>
-        <li><i class="fas fa-circle"></i> <strong>December:</strong>For single-parent families</li>
+        <li><i class="fas fa-circle"></i> <strong>November:</strong> For the proper use of wealth</li>
+        <li><i class="fas fa-circle"></i> <strong>December:</strong> For single-parent families</li>
       </ul>
       <div class="button-group">
-        <button class="view-pdf-btn" id="viewPdfBtn">
-          <i class="fas fa-eye"></i> View PDF
-        </button>
-        <button class="download-pdf-btn" id="downloadIntentionsBtn">
-          <i class="fas fa-download"></i> Download PDF
-        </button>
+        <button class="view-pdf-btn" id="viewPdfBtn"><i class="fas fa-eye"></i> View PDF</button>
+        <button class="download-pdf-btn" id="downloadIntentionsBtn"><i class="fas fa-download"></i> Download PDF</button>
       </div>
     </div>
   </div>
@@ -638,7 +608,7 @@
         <span style="color: #FFE2A4; font-weight: 600;">🔥 Youth Fire Conference 2026</span>
         <span style="font-size: 0.9rem;">March 28-30 | Powerful speakers, life-changing worship!</span>
       </div>
-      <div style="background: rgba(255,217,102,0.2); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content; center;">
+      <div style="background: rgba(255,217,102,0.2); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
         <i class="fas fa-arrow-right" style="color: #FFD966;"></i>
       </div>
     </div>
@@ -697,117 +667,34 @@
 <script>
   AOS.init({ once: true, offset: 80, duration: 700 });
 
-  // ============================================
-  // PDF FILE PATH - REPLACE WITH YOUR ACTUAL PDF FILE LOCATION
-  // ============================================
-  // Examples:
-  // - If PDF is in the same folder: 'pope-intentions.pdf'
-  // - If PDF is in a subfolder: 'pdf/pope-intentions.pdf'
-  // - If using an external URL: 'https://example.com/pope-intentions.pdf'
-  const PDF_FILE_PATH = 'Images/prayer.pdf'; // 👈 CHANGE THIS TO YOUR PDF PATH
+  // PDF FILE PATH - Update with your actual PDF location
+  const PDF_FILE_PATH = 'Images/prayer.pdf';
   
-  // View PDF in new tab
-  function viewPDF() {
-    window.open(PDF_FILE_PATH, '_blank');
-  }
-  
-  // Download PDF
+  function viewPDF() { window.open(PDF_FILE_PATH, '_blank'); }
   function downloadPDF() {
-    // Create a temporary link element to force download
     const link = document.createElement('a');
     link.href = PDF_FILE_PATH;
-    link.download = PDF_FILE_PATH.split('/').pop(); // Extract filename
+    link.download = PDF_FILE_PATH.split('/').pop();
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   }
 
-  // Attach event listeners
   document.getElementById('viewPdfBtn')?.addEventListener('click', viewPDF);
   document.getElementById('downloadIntentionsBtn')?.addEventListener('click', downloadPDF);
 
-  // Slide Data with detailed information for each image - COMPLETE 10 SLIDES
+  // Slide Data
   const slides = [
-    { 
-      img: "Images/jesus.jpg", 
-      title: "Jesus Christ", 
-      desc: "The Prince Of Heaven", 
-      fullDescription: "Jesus Christ, the Son of God, came to earth to save humanity from sin. His life, death, and resurrection are the foundation of our faith. Through Him, we have eternal life and reconciliation with God.", 
-      scripture: "John 3:16 - 'For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.'", 
-      date: "Throughout the Year" 
-    },
-    { 
-      img: "Images/mary.jpg", 
-      title: "Mary, Mother of God", 
-      desc: "Queen Of Angels", 
-      fullDescription: "The Blessed Virgin Mary, Mother of Jesus, is honored as the Mother of God. Her 'yes' to God's plan brought salvation into the world. She intercedes for us and guides us closer to her Son.", 
-      scripture: "Luke 1:28 - 'Hail, full of grace, the Lord is with you! Blessed are you among women.'", 
-      date: "Feast Days: January 1, August 15, December 8" 
-    },
-    { 
-      img: "Images/LEO LEFT.jpg", 
-      title: "Pope Leo XIII", 
-      desc: "Bishop of Rome", 
-      fullDescription: "Pope Leo XIII served as Pope from 1878 to 1903. He was known for his intellectual contributions to Catholic social teaching, especially through his encyclical Rerum Novarum, which addressed the rights and duties of capital and labor.", 
-      scripture: "Matthew 16:18 - 'You are Peter, and on this rock I will build my church.'", 
-      date: "Papacy: 1878-1903" 
-    },
-    { 
-      img: "Images/archbishop kaigma.jpg", 
-      title: "His Grace Most Rev. Dr. Ignatius Kaigama", 
-      desc: "Catholic Archbishop Of Abuja Archdiocese", 
-      fullDescription: "Archbishop Ignatius Kaigama is the Metropolitan Archbishop of Abuja. He is a respected leader, peace advocate, and shepherd of the Catholic faithful in the Federal Capital Territory.", 
-      scripture: "Jeremiah 3:15 - 'And I will give you shepherds after my own heart...'", 
-      date: "Installed: November 2019" 
-    },
-    { 
-      img: "Images/his lord.png", 
-      title: "His Lordship Most Rev. Dr. Anselm Umoren MSP", 
-      desc: "Catholic Auxiliary Bishop Of Abuja", 
-      fullDescription: "Bishop Anselm Umoren serves as the Auxiliary Bishop of Abuja Archdiocese. A member of the Missionary Society of St. Paul (MSP), he is dedicated to evangelization.", 
-      scripture: "Acts 1:8 - 'But you will receive power when the Holy Spirit comes on you...'", 
-      date: "Consecrated: March 2024" 
-    },
-    { 
-      img: "Images/father.png", 
-      title: "Rev. Fr. Samson Adachabo", 
-      desc: "Pontifical Mission Society Director", 
-      fullDescription: "Rev. Fr. Samson Adachabo is the current Director of the Pontifical Mission Societies in Abuja Archdiocese. He leads the coordination of all missionary activities.", 
-      scripture: "Romans 10:14-15 - 'How, then, can they call on the one they have not believed in?'", 
-      date: "Current PMS Director" 
-    },
-    { 
-      img: "Images/16.jpeg", 
-      title: "Rev. Fr. Hilary Ugwuanyi", 
-      desc: "P.O.F Coordinator/YOMM Chaplain", 
-      fullDescription: "Rev. Fr. Hilary Ugwuanyi serves as the Propagation of the Faith (POF) Coordinator and Chaplain for the Young Missionary Movement (YOMM).", 
-      scripture: "1 Timothy 4:12 - 'Don't let anyone look down on you because you are young...'", 
-      date: "YOMM Chaplain | POF Coordinator" 
-    },
-    { 
-      img: "Images/4.jpeg", 
-      title: "Brother Charles Moses", 
-      desc: "YOMM National Coordinator", 
-      fullDescription: "Brother Charles serves as the National Coordinator of the Young Missionary Movement (YOMM) in Nigeria.", 
-      scripture: "Psalm 96:3 - 'Declare his glory among the nations...'", 
-      date: "YOMM National Coordinator" 
-    },
-    { 
-      img: "Images/sis1.jpg", 
-      title: "Sr. Ahaiwe Angelina, CCSSP", 
-      desc: "Garki Deanery Holy Childhood Association Coordinator", 
-      fullDescription: "Edith Ibeh Ada serves as the Holy Childhood Association (HCA) Coordinator for Garki Deanery in Abuja Archdiocese.", 
-      scripture: "Matthew 19:14 - 'Let the little children come to me...'", 
-      date: "HCA Coordinator" 
-    },
-    { 
-      img: "Images/sis.jpeg", 
-      title: "Sr Mary Lawrentine Amaefule, IHM",
-      desc: "HCA Archdiocesan Coordinator", 
-      fullDescription: "Sr. Mary Lawrentine Amaefule, IHM, serves as the Holy Childhood Association (HCA) Archdiocesan Coordinator in Abuja.", 
-      scripture: "Matthew 25:40 - 'Whatever you did for one of the least of these...'", 
-      date: "HCA Archdiocesan Coordinator" 
-    }
+    { img: "Images/jesus.jpg", title: "Jesus Christ", desc: "The Prince Of Heaven", fullDescription: "Jesus Christ, the Son of God, came to earth to save humanity from sin. His life, death, and resurrection are the foundation of our faith.", scripture: "John 3:16 - 'For God so loved the world...'", date: "Throughout the Year" },
+    { img: "Images/mary.jpg", title: "Mary, Mother of God", desc: "Queen Of Angels", fullDescription: "The Blessed Virgin Mary, Mother of Jesus, is honored as the Mother of God. Her 'yes' to God's plan brought salvation into the world.", scripture: "Luke 1:28 - 'Hail, full of grace...'", date: "Feast Days: January 1, August 15, December 8" },
+    { img: "Images/LEO LEFT.jpg", title: "Pope Leo XIII", desc: "Bishop of Rome", fullDescription: "Pope Leo XIII served as Pope from 1878 to 1903. He was known for his intellectual contributions to Catholic social teaching.", scripture: "Matthew 16:18 - 'You are Peter...'", date: "Papacy: 1878-1903" },
+    { img: "Images/archbishop kaigma.jpg", title: "His Grace Most Rev. Dr. Ignatius Kaigama", desc: "Catholic Archbishop Of Abuja Archdiocese", fullDescription: "Archbishop Ignatius Kaigama is the Metropolitan Archbishop of Abuja, a respected leader and peace advocate.", scripture: "Jeremiah 3:15 - 'And I will give you shepherds...'", date: "Installed: November 2019" },
+    { img: "Images/his lord.png", title: "His Lordship Most Rev. Dr. Anselm Umoren MSP", desc: "Catholic Auxiliary Bishop Of Abuja", fullDescription: "Bishop Anselm Umoren serves as the Auxiliary Bishop of Abuja Archdiocese, dedicated to evangelization.", scripture: "Acts 1:8 - 'But you will receive power...'", date: "Consecrated: March 2024" },
+    { img: "Images/father.png", title: "Rev. Fr. Samson Adachabo", desc: "Pontifical Mission Society Director", fullDescription: "Rev. Fr. Samson Adachabo is the current Director of the Pontifical Mission Societies in Abuja Archdiocese.", scripture: "Romans 10:14-15 - 'How can they believe...'", date: "Current PMS Director" },
+    { img: "Images/16.jpeg", title: "Rev. Fr. Hilary Ugwuanyi", desc: "P.O.F Coordinator/YOMM Chaplain", fullDescription: "Rev. Fr. Hilary Ugwuanyi serves as the Propagation of the Faith Coordinator and Chaplain for YOMM.", scripture: "1 Timothy 4:12 - 'Don't let anyone look down on you...'", date: "YOMM Chaplain" },
+    { img: "Images/4.jpeg", title: "Brother Charles Moses", desc: "YOMM National Coordinator", fullDescription: "Brother Charles serves as the National Coordinator of the Young Missionary Movement (YOMM) in Nigeria.", scripture: "Psalm 96:3 - 'Declare his glory among the nations...'", date: "YOMM National Coordinator" },
+    { img: "Images/sis1.jpg", title: "Sr. Ahaiwe Angelina, CCSSP", desc: "Holy Childhood Association Coordinator", fullDescription: "Sr. Ahaiwe Angelina serves as the Holy Childhood Association Coordinator.", scripture: "Matthew 19:14 - 'Let the little children come to me...'", date: "HCA Coordinator" },
+    { img: "Images/sis.jpeg", title: "Sr Mary Lawrentine Amaefule, IHM", desc: "HCA Archdiocesan Coordinator", fullDescription: "Sr. Mary Lawrentine Amaefule serves as the Holy Childhood Association Archdiocesan Coordinator.", scripture: "Matthew 25:40 - 'Whatever you did for one of the least of these...'", date: "HCA Archdiocesan Coordinator" }
   ];
 
   let currentIndex = 0;
@@ -835,10 +722,7 @@
           <p><i class="fas fa-cross me-1"></i> ${escapeHtml(slide.desc)}</p>
         </div>
       `;
-      card.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openImageDetailModal(idx);
-      });
+      card.addEventListener('click', (e) => { e.stopPropagation(); openImageDetailModal(idx); });
       container.appendChild(card);
     });
     updateCounter();
@@ -909,7 +793,6 @@
 
   document.getElementById('newsBannerClick')?.addEventListener('click', () => window.location.href = 'news.html');
   
-  // Active link highlighting based on current page
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
